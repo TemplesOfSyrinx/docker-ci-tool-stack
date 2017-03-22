@@ -9,14 +9,14 @@
 # - Git v2.6.4
 
 echo "Create docker machine"
-docker-machine create -d virtualbox --virtualbox-memory "6000" docker-ci-tools
+docker-machine create -d virtualbox --virtualbox-memory "4000" docker-ci-tools
 
 echo "Setup environment"
 eval $(docker-machine env docker-ci-tools)
 
-echo "Checkout Git Repository"
-git clone git@github.com:marcelbirkner/docker-ci-tool-stack.git
-cd docker-ci-tool-stack
+#echo "Checkout Git Repository"
+#git clone git@github.com:marcelbirkner/docker-ci-tool-stack.git
+#cd docker-ci-tool-stack
 
 echo "Startup Docker Compose"
 docker-compose up
